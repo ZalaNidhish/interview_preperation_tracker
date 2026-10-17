@@ -2,7 +2,7 @@ import AppHeader from '../components/AppHeader.jsx';
 import DashboardHeader from '../components/DashboardHeader.jsx';
 import StatsGrid from '../components/StatsGrid.jsx';
 import ProgressCard from '../components/ProgressCard.jsx';
-import QuestionsSection from '../components/QuestionSSection.jsx';
+import QuestionsSection from '../components/QuestionsSection.jsx';
 import QuestionModal from '../components/QuestionModal.jsx';
 // 1. Ensure useEffect is imported
 import { useContext, useState, useEffect } from 'react'; 
