@@ -130,7 +130,7 @@ const QuestionModal = () => {
         <Field label="Notes (optional)">
           <textarea
             {...register('notes')}
-            value={question ? question.notes : ""}
+            defaultValue={question ? question.notes : ""}
             rows="3"
             className="w-full resize-none rounded-lg border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none placeholder:text-zinc-400 focus:border-orange-300"
             placeholder="Add notes or things to remember..."
