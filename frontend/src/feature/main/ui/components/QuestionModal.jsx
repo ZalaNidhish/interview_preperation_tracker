@@ -19,7 +19,7 @@ const QuestionModal = () => {
 
   const {register, handleSubmit, errors, addQuestion, editQuestion} = useQuestion()
 
-  const {setIsModalOpen, question} = useContext(MainContext)
+  const {setIsModalOpen, question, setQuestion} = useContext(MainContext)
 
   return (
     <div className="mx-auto max-w-xl rounded-2xl border border-zinc-200 bg-white p-6 shadow-xl">
@@ -36,7 +36,11 @@ const QuestionModal = () => {
         <button
           className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-100"
           aria-label="Close"
-          onClick={()=>setIsModalOpen(false)}
+          onClick={()=>{
+            setIsModalOpen(false)
+            setQuestion(null)
+
+          }}
         >
           <X size={18} />
         </button>
@@ -138,7 +142,10 @@ const QuestionModal = () => {
           {errors.notes && <p className='text-red-600'>{errors.notes.message}</p>}
         </Field>
         <div className="mt-6 flex justify-end gap-2 border-t border-zinc-100 pt-5">
-          <Button variant="outline" onClick={()=>setIsModalOpen(false)}>Cancel</Button>
+          <Button variant="outline" onClick={()=>{
+            setIsModalOpen(false)
+            setQuestion(null)
+          }}>Cancel</Button>
           <Button type="submit"><Plus size={15} /> {question ? "Edit Question" : "Add Question"}</Button>
         </div>
       </form>

@@ -7,7 +7,7 @@ export const useQuestion = ()=>{
 
     const {register, handleSubmit, formState:{errors}, reset} = useForm()
     const {user} = useContext(AuthContext)
-    let {setQuestions, questions, setIsModalOpen, question} = useContext(MainContext)
+    let {setQuestions, questions, setIsModalOpen, question, setQuestion} = useContext(MainContext)
 
     const addQuestion = (data)=>{
         const question = {...data, id:Date.now(), email: user.email}
@@ -26,6 +26,7 @@ export const useQuestion = ()=>{
         localStorage.setItem('tracker_questions', JSON.stringify(updatedQuestionsList))
         setQuestions(updatedQuestionsList)
         setIsModalOpen(false)
+        setQuestion(null)
         reset()
     }
 
